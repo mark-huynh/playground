@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <select id="type">
+        <option>Sushi Items</option>
+        <option>Main Dishes</option>
+        <option>Appetizers</option>
+        <option>Drinks/Dessert</option>
+    </select>
+    <select id='empty'>
+    </select>
+
+    <button>Add</button>
+    <button>Remove</button>
+    <button>Change price</button>
+    <button>Change description</button>
+    <button>Add image</button>
+
+
+    <!-- Getting error cause accessing file system. TODO: Try with electron and see if I run into error or not
+    <script type ='module' src='dropdown.js'>
+    </script> -->
+
+    <script>
+
+        var e = document.getElementById("type");
+        let arr = ["hi", "hello", 'bleh'];
+        let arr1 = ["h32i", "hefasdllo", 'basdfleh'];
+        let arr2 = ["hasdfai", "helfasdglo", 'blegfsdh'];
+        let arr3= ["hcxv i", "helsdafsd lo", 'blfasdeh'];
+
+
+        let clear = document.querySelector("#empty");
+
+ 
+        e.addEventListener('change', () => {
+        var chosenType = e.options[e.selectedIndex].text;
+        if(chosenType === "Sushi Items")
+        {
+            clear.innerHTML = "";
+            arr.forEach(item => clear.options.add(
+            new Option(item, item)
+        ))
+        }
+        else if(chosenType === "Main Dishes")
+        {
+            clear.innerHTML = "";
+            arr1.forEach(item => clear.options.add(
+            new Option(item, item)
+        ))
+        }
+        else if(chosenType === "Appetizers")
+        {
+            clear.innerHTML = "";
+            arr2.forEach(item => clear.options.add(
+            new Option(item, item)
+        ))
+        }
+        else if(chosenType === "Drinks/Dessert")
+        {
+            clear.innerHTML = "";
+            arr3.forEach(item => clear.options.add(
+            new Option(item, item)
+        ))
+        }
+        })
+
+
+        // sushiSelect = document.querySelector("#sushi").options;
+
+        // arr.forEach(e => sushiSelect.add(
+        //     new Option(e, e)
+        // ))
+    </script>
+
+</body>
+</html>
